@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { JSX, useContext } from "react";
 import { TaskbarContext } from "./taskbarcontext";
 
 export default function WindowManager() {

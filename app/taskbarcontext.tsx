@@ -1,5 +1,5 @@
 "use client";
-import { createContext, SetStateAction, useEffect, useState } from "react";
+import { createContext, JSX, SetStateAction, useState } from "react";
 
 interface TaskbarContextType {
   admin: boolean;
@@ -21,44 +21,6 @@ export default function TaskbarContextWrapper(props: {
 }) {
   const [windows, setWindows] = useState<JSX.Element[]>([]);
   const [admin, setAdmin] = useState(false);
-
-  const adminEnv = async () => {
-    const email = process.env.NEXT_PUBLIC_EMAIL;
-    const password = process.env.NEXT_PUBLIC_PASSWORD;
-
-    if (email !== undefined && password !== undefined) {
-      const formData = new FormData();
-      formData.append("email", email as string);
-      formData.append("password", password as string);
-      try {
-        const response = await fetch("/api/admin/", {
-          method: "POST",
-          body: formData,
-        });
-
-        const data = await response.json();
-        if (data.token) {
-          setAdmin(true);
-        }
-      } catch (err: unknown) {
-        if (typeof err === "string") {
-          console.log(err);
-        } else if (err instanceof Error) {
-          return new Response(
-            JSON.stringify({ error: err.message || err.toString() }),
-            {
-              status: 500,
-              headers: {},
-            },
-          );
-        }
-      }
-    }
-  };
-
-  useEffect(() => {
-    adminEnv();
-  }, []);
 
   const openWindow = (window: JSX.Element) => {
     for (let i = 0; i < windows.length; i++) {
