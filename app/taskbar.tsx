@@ -11,15 +11,16 @@ export function Taskbar() {
       <div className="flex flex-row items-end h-8">
         {show && <WindowsPopUp />}
         <div
-          id={show ? "border-nb-pressed" : "border-nb"}
-          className=" z-10 w-16 h-16 "
+          className={"z-10 w-16 h-16 ".concat(
+            show ? "border-pressed" : "border",
+          )}
           onClick={() => {
             setShow(!show);
           }}
         >
           <Image src={Windows} width={64} height={64} alt="Windows logo" />{" "}
         </div>
-        <div id="border-b" className="z-0 w-full h-8 flex "></div>
+        <div id="border" className="z-0 w-full h-8 flex border"></div>
       </div>
     </div>
   );
