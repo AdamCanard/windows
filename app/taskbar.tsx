@@ -1,5 +1,5 @@
 "use client";
-import Windows from "../../../../public/Windows/Windows.png";
+import Windows from "@/public/Windows/Windows.png";
 import Image from "next/image";
 import { useState } from "react";
 import WindowsPopUp from "./windowspopup";
