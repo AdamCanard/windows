@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+html,
+body {
+  background-image: url(../public/Windows/Desktop.jpg);
+  background-size: cover;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  -webkit-user-select: none;
+  user-select: none;
+  -ms-user-select: none;
+}

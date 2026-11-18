@@ -1,7 +1,7 @@
 "use client";
 import TaskbarContextWrapper from "./taskbarcontext";
 import localFont from "next/font/local";
-
+import "./global.css";
 const MSFont = localFont({ src: "../public/fonts/ms-sans-serif.ttf" });
 export default function RootLayout({
   children,
