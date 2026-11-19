@@ -4,12 +4,25 @@ import Image from "next/image";
 import { useContext } from "react";
 import { TaskbarContext } from "./taskbarcontext";
 import FileExplorerImg from "@/public/Windows/FileExplorer.svg";
+import DraggableWindow from "./draggablewindow";
 export default function FileExplorer() {
   const { openWindow } = useContext(TaskbarContext);
   return (
     <div className={"grid w-full h-full p-4"}>
       <div
-        onClick={() => openWindow(<div></div>)}
+        onClick={() =>
+          openWindow(
+            <DraggableWindow
+              title="Test"
+              width="24"
+              height="24"
+              windowKey="Test"
+              key={"Test"}
+            >
+              {<div></div>}
+            </DraggableWindow>,
+          )
+        }
         className={"w-24 h-24 flex items-center justify-center"}
       >
         <Image

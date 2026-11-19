@@ -2,8 +2,6 @@
 import { createContext, JSX, SetStateAction, useState } from "react";
 
 interface TaskbarContextType {
-  admin: boolean;
-  setAdmin: React.Dispatch<SetStateAction<boolean>>;
   windows: JSX.Element[];
   setWindows: React.Dispatch<SetStateAction<JSX.Element[]>>;
   openWindow: (window: JSX.Element) => void;
@@ -20,7 +18,6 @@ export default function TaskbarContextWrapper(props: {
   children?: React.ReactNode;
 }) {
   const [windows, setWindows] = useState<JSX.Element[]>([]);
-  const [admin, setAdmin] = useState(false);
 
   const openWindow = (window: JSX.Element) => {
     for (let i = 0; i < windows.length; i++) {
@@ -53,8 +50,6 @@ export default function TaskbarContextWrapper(props: {
     <>
       <TaskbarContext.Provider
         value={{
-          admin,
-          setAdmin,
           windows,
           setWindows,
           openWindow,
