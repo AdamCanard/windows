@@ -105,11 +105,10 @@ export default function DraggableWindow(props: {
         className="flex flex-col justify-center items-center absolute"
         style={point}
       >
-        <div id="window">
+        <div>
           <div className="flex justify-between w-full relative h-8">
             <h1
-              id="title"
-              className=" w-full"
+              className="w-full title"
               style={cursor}
               onMouseDown={handleMouseDown}
             >

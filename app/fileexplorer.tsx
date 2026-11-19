@@ -15,11 +15,11 @@ export default function FileExplorer() {
             <DraggableWindow
               title="Test"
               width="24"
-              height="24"
+              height="48"
               windowKey="Test"
               key={"Test"}
             >
-              {<div></div>}
+              {<div className={"border w-full h-full"}></div>}
             </DraggableWindow>,
           )
         }
